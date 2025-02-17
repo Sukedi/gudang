@@ -10,7 +10,9 @@ function sendMessage() {
 }
 function GetResponse(cInput){
     cInput = cInput.toLowerCase();
-    cInput = cInput.replace(/ {2,}/g, " ").replace(/'/g, "").replace(/ss/g, "s").replace("met", "mat").replace("ll", "l");
+    cInput = cInput.replace(/ {2,}/g, " ").replace(/'/g, "").
+    replace(/ss/g, "s").replace("met", "mat").replace("ll", "l").
+    replace("pa kabar", "pakabar");
     alamat = "Alamat kami:<br>";
     alamat += "Kantor pusat: Jl.Pandawa No.1A Pemalang<br>";
     alamat += "Kantor cabang: Jl.Sumawa No.100 Pekalongan";
@@ -23,11 +25,12 @@ function GetResponse(cInput){
     rspn2 = "Ada yang bisa saya bantu?";
     if (cInput.indexOf("asalamualaikum") > -1){ rspn1 = "Wa'alaikumussalam warahmatullahi wabarakatuh. " }
     if (cInput.indexOf("halo")>-1 || cInput.indexOf("helo")>-1) { rspn1 = "Iya halo. "; }
+    if (cInput.indexOf("hai")>-1 || cInput.indexOf("hei")>-1) { rspn1 = "Hai juga. "; }
     if (cInput.indexOf("mat pagi")>-1) { rspn1 += "Selamat pagi juga. " }
-    if (cInput.indexOf("mat siang")>-1) { rspn1 += "Selamat siang juga. " }
+    if (cInput.indexOf("mat sian")>-1) { rspn1 += "Selamat siang juga. " }
     if (cInput.indexOf("mat sore")>-1) { rspn1 += "Selamat sore juga. " }
-    if (cInput.indexOf("mat malam")>-1) { rspn1 += "Selamat malam juga. " }
-    if (cInput.indexOf("apa kabar")>-1 || cInput.indexOf("mana kabar")>-1) { rspn2 = "Alhamdulillah baik-baik saja. "; }
+    if (cInput.indexOf("mat mala")>-1) { rspn1 += "Selamat malam juga. " }
+    if (cInput.indexOf("pakaba")>-1 || cInput.indexOf("mana kaba")>-1) { rspn2 = "Alhamdulillah baik-baik saja. "; }
     if (cInput.indexOf("alamat")>-1 || cInput.indexOf("kantor")>-1 || cInput.indexOf("cabang")>-1) { rspn2 = alamat; }
     if (rspn1==="") { 
         let nn = Math.ceil(Math.random() * 4);
